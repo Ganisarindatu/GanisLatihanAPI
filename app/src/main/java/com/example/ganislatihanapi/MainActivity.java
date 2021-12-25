@@ -44,10 +44,10 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
+//Ganis Arindatu
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<DataSystem> dataSystems= new ArrayList();
+    ArrayList<DataSystem> datasystems= new ArrayList();
     JSONObject jsonObject;
     ListView listview;
     FloatingActionButton btnRefresh;
@@ -58,12 +58,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadingIndicator = findViewById(R.id.loading);
-        getDataWeb();
+        getDataSystem();
     }
 
     void setupListviewSystem () {
         listview = findViewById(R.id.list);
-        AdapterSystem adapter = new AdapterSystem(this, dataSystems);
+        AdapterSystem adapter = new AdapterSystem(this, datasystems);
         listview.setAdapter(adapter);
         listview.setOnItemClickListener(onItemClick);
     }
@@ -71,15 +71,15 @@ public class MainActivity extends AppCompatActivity {
     private AdapterView.OnItemClickListener onItemClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            DataSystem system = dataSystems.get(position);
+            DataSystem system = datasystems.get(position);
             Intent intent = new Intent(MainActivity.this, DetailSystem.class);
             intent.putExtra("System", system);
             startActivity(intent);
         }
     };
     final String url = "https://ewinsutriandi.github.io/mockapi/operating_system.json";
-    void getDataWeb() {
-        dataSystems.clear();
+    void getDataSystem() {
+        datasystems.clear();
         loadingIndicator.setVisibility(View.VISIBLE);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 String developer = data.getString("developer");
                 String website = data.getString("website");
                 String smodel = data.getString("source_model");
-                dataSystems.add(new DataSystem(nameSystem,versi,developer,website,smodel, description, logo));
+                datasystems.add(new DataSystem(nameSystem,versi,developer,website,smodel, description, logo));
             }catch (JSONException e) {
                 e.printStackTrace();
             }

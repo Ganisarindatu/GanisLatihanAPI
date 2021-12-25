@@ -2,9 +2,9 @@ package com.example.ganislatihanapi.model;
 
 import java.io.Serializable;
 public class    DataSystem implements Serializable {
-    String namaSystem, versi,  description, logo,developer,website,smodel;
-    public DataSystem(String namaSystem, String versi, String description,String logo,String developer,String website,String smodel) {
-        this.namaSystem = namaSystem;
+    String nameSystem, versi,  description, logo,developer,website,smodel;
+    public DataSystem(String nameSystem, String versi, String description,String logo,String developer,String website,String smodel) {
+        this.nameSystem = nameSystem;
         this.versi = versi;
         this.description = description;
         this.logo = logo;
@@ -13,12 +13,12 @@ public class    DataSystem implements Serializable {
         this.smodel = smodel;
     }
 
-    public String getNamaSystem() {
-        return namaSystem;
+    public String getNameSystem() {
+        return nameSystem;
     }
 
-    public void setNamaSystem(String namaSystem) {
-        this.namaSystem= namaSystem;
+    public void setNameSystem(String namaSystem) {
+        this.nameSystem= nameSystem;
     }
 
     public String getVersi() {

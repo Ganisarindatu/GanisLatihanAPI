@@ -14,7 +14,7 @@ import com.example.ganislatihanapi.model.DataSystem;
 public class DetailSystem extends AppCompatActivity {
     DataSystem system;
     ImageView logo;
-    TextView namaSystem, versi,  description,developer,website,smodel;
+    TextView titleSystem, versi,  description,developer,website,smodel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,14 +27,14 @@ public class DetailSystem extends AppCompatActivity {
 
     void inisialisasiView() {
         logo = findViewById(R.id.logo);
-        namaSystem = findViewById(R.id.jenisSistem);
+        titleSystem = findViewById(R.id.jenisSistem);
         description = findViewById(R.id.deskripsi);
         versi = findViewById(R.id.versi);
         developer = findViewById(R.id.developer);
         website = findViewById(R.id.link);
         smodel = findViewById(R.id.model);
 
-        namaSystem.setText(system.getNamaSystem());
+        titleSystem.setText(system.getNameSystem());
         description.setText(system.getDescription());
         versi.setText(system.getVersi());
         developer.setText(system.getDeveloper());

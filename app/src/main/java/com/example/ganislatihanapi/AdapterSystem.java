@@ -37,7 +37,7 @@ public class AdapterSystem extends ArrayAdapter {
                 .load(dataSystem.getLogo())
                 .into(imageView);
 
-        titleListview.setText(dataSystem.getNamaSystem());
+        titleListview.setText(dataSystem.getNameSystem());
 
         return convertView;
     }
