@@ -1,6 +1,4 @@
 package com.example.ganislatihanapi;
-
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,8 +41,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import com.example.ganislatihanapi.R;
+import com.example.ganislatihanapi.model.DataSystem;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-//Ganis Arindatu
+
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<DataSystem> datasystems= new ArrayList();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         Log.i("Not Found", error.toString());
                         loadingIndicator.setVisibility(View.GONE);
-                        Toast.makeText(MainActivity.this, "Hubungkan prangkat anda dengan internet", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Hubungkan perangkat anda dengan internet", Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -110,12 +110,10 @@ public class MainActivity extends AppCompatActivity {
             try {
                 JSONObject data = jsonObject.getJSONObject(nameSystem);
                 String description = data.getString("description");
-                String logo = data.getString("logo");
-                String versi = data.getString("latest_version");
-                String developer = data.getString("developer");
-                String website = data.getString("website");
-                String smodel = data.getString("source_model");
-                datasystems.add(new DataSystem(nameSystem,versi,developer,website,smodel, description, logo));
+
+                String logo = data.getString("logo_url");
+                String official_website = data.getString("website");
+                datasystems.add(new DataSystem(nameSystem,official_website, description, logo));
             }catch (JSONException e) {
                 e.printStackTrace();
             }

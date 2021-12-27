@@ -1,4 +1,5 @@
 package com.example.ganislatihanapi;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -14,7 +15,7 @@ import com.example.ganislatihanapi.model.DataSystem;
 public class DetailSystem extends AppCompatActivity {
     DataSystem system;
     ImageView logo;
-    TextView titleSystem, versi,  description,developer,website,smodel;
+    TextView titleSystem, link, description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,20 +28,12 @@ public class DetailSystem extends AppCompatActivity {
 
     void inisialisasiView() {
         logo = findViewById(R.id.logo);
-        titleSystem = findViewById(R.id.jenisSistem);
+        titleSystem = findViewById(R.id.jenissystem);
         description = findViewById(R.id.deskripsi);
-        versi = findViewById(R.id.versi);
-        developer = findViewById(R.id.developer);
-        website = findViewById(R.id.link);
-        smodel = findViewById(R.id.model);
-
-        titleSystem.setText(system.getNameSystem());
+        link = findViewById(R.id.link);
+        titleSystem.setText(system.getNameSystem());;
+        link.setText(system.getLink());
         description.setText(system.getDescription());
-        versi.setText(system.getVersi());
-        developer.setText(system.getDeveloper());
-        website.setText(system.getWebsite());
-        smodel.setText(system.getSmodel());
-
         Glide
                 .with(this)
                 .load(system.getLogo())
@@ -51,7 +44,7 @@ public class DetailSystem extends AppCompatActivity {
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
         intent.addCategory(Intent.CATEGORY_BROWSABLE);
-        intent.setData(Uri.parse(system.getWebsite()));
+        intent.setData(Uri.parse(system.getLink()));
         startActivity(intent);
     }
 }

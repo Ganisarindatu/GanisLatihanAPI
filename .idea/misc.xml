@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GanisLatihanAPI/app/src/main/res/layout/a.xml" value="0.1" />
         <entry key="..\:/GanisLatihanAPI/app/src/main/res/layout/activity_daftar.xml" value="0.1" />
-        <entry key="..\:/GanisLatihanAPI/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/GanisLatihanAPI/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/GanisLatihanAPI/app/src/main/res/layout/detail_system.xml" value="0.22" />
       </map>
     </option>

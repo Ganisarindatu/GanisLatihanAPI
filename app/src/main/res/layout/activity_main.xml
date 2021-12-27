@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgos"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/judul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Operating Sysrems"
+        android:text="Operating Systems"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="60px" />
 
     <TextView
-        android:id="@+id/sub_judul"
+        android:id="@+id/subjudul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/judul"
-        android:text="Macam-Macam Sistem Operasi"
+        android:text="Daftar Sistem Operasi"
         android:textAlignment="center"
         android:textColor="@color/black" />
 
@@ -28,8 +31,11 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/sub_judul"
-        android:layout_margin="10dp" />
+        android:layout_below="@id/subjudul"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
 
     <ProgressBar
         android:id="@+id/loading"
